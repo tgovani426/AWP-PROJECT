@@ -56,25 +56,25 @@
         <p class="menu-label">STAFF MANAGEMENT</p>
         <ul class="menu-list">
           <li class="--set-active-tables-html">
-            <a href="addstaff">
+            <a href="/staff/addStaff">
               <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
               <span class="menu-item-label">Add Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="delstaff">
+            <a href="/staff/delStaff">
               <span class="icon"><i class="fa-solid fa-user-xmark"></i></span>
               <span class="menu-item-label">Remove Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="updatestaff">
+            <a href="/staff/updateStaff">
               <span class="icon"><i class="fa-solid fa-user-pen"></i></span>
               <span class="menu-item-label">Update Staff</span>
             </a>
           </li>
           <li class="--set-active-forms-html">
-            <a href="viewstaff">
+            <a href="/staff/viewStaff">
               <span class="icon"><i class="fa-solid fa-users"></i></span>
               <span class="menu-item-label">View Staff</span>
             </a>
@@ -83,7 +83,7 @@
         <p class="menu-label">Actions</p>
         <ul class="menu-list">
           <li class="active">
-            <a href="signin">
+            <a href="/auth/signin">
               <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
               <span class="menu-item-label">Log Out</span>
             </a>
@@ -100,139 +100,136 @@
         </ul>
       </div>
     </section>
+    <form action="/project/newproject" method="POST">
 
     <section class="section main-section">
       <div class="card mb-6">
         <div class="card-content">
-          <form action="/project/newproject" method="POST">
-
-            <section class="section main-section">
-              <div class="card mb-6">
-                <div class="card-content">
-                  <form method="get">
-                    <div class="field">
-                      <label class="label">Project Details</label>
-                      <div class="field-body">
-                        <div class="field">
-                          <div class="control ">
-                            <input class="input" type="text" placeholder="Project Name" name="projectname">
-                          </div>
-                          <p class="help">Eg: MiniSAP</p>
-                        </div>
-                        <div class="field">
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Client Manager" name="clientmanager">
-                          </div>
-                          <p class="help">Eg: John Doe</p>
-                        </div>
-                        <div class="field">
-                          <div class="field addons">
-                            <div class="control expanded">
-                              <input class="input" type="tel" placeholder="Client Company Name" name="companyname">
-                            </div>
-                          </div>
-                          <p class="help">Eg: DoT</p>
-                        </div>
-                        <div class="field">
-                          <div class="control">
-                            <input class="input" type="email" placeholder="clientname@companymail.com" name="email">
-                          </div>
-                          <p class="help">Eg: johndoe@dot.com</p>
-                        </div>
-                      </div>
+          <form method="get">
+            <div class="field">
+              <label class="label">Project Details</label>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control ">
+                    <input class="input" type="text" placeholder="Project Name" name="projectname">
+                  </div>
+                  <p class="help">Eg: MiniSAP</p>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Client Manager" name="clientmanager">
+                  </div>
+                  <p class="help">Eg: John Doe</p>
+                </div>
+                <div class="field">
+                  <div class="field addons">
+                    <div class="control expanded">
+                      <input class="input" type="tel" placeholder="Client Company Name" name="companyname">
                     </div>
-
-                    <hr>
-
-                    <div class="field">
-                      <label class="label">Project ID</label>
-                      <div class="control">
-                        <input class="input" type="text" placeholder="Eg: P001" name="projid">
-                      </div>
-                      <p class="help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <div class="field">
-                      <label class="label">Project Estimation</label>
-                      <div class="control">
-                        <input class="input" type="text" placeholder="Project Manager" name="projmanager">
-                      </div>
-                      <p class="help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <div class="field">
-                      <label class="label">Department</label>
-                      <div class="control">
-                        <div class="select">
-                          <select name="dept">
-                            <option value=""></option>
-                            <option value="Designer">Designer</option>
-                            <option value="Developer">Developer</option>
-                            <option value="Marketing">Marketing</option>
-                          </select>
-                        </div>
-                      </div>
-                      <p class="help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <div class="field">
-                      <label class="label">Incoming Budget (INR)</label>
-                      <div class="control">
-                        <input class="input" type="number" placeholder="100000" name="budgt">
-                      </div>
-                      <p class="help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <div class="field">
-                      <label class="label">Deadline</label>
-                      <div class="control">
-                        <input type="date" class="input" name="deadline"></input>
-                      </div>
-                      <p class=" help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <hr>
-
-                    <div class="field">
-                      <label class="label">Milestones & Notes</label>
-                      <div class="control">
-                        <textarea class="textarea" name="textarea"></textarea>
-                      </div>
-                      <p class="help">
-                        This field is required
-                      </p>
-                    </div>
-
-                    <hr>
-
-                    <div class="field grouped">
-                      <div class="control">
-                        <button type="submit" class="button green">
-                          Submit
-                        </button>
-                      </div>
-                      <div class="control">
-                        <button type="reset" class="button red">
-                          Reset
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
+                  <p class="help">Eg: DoT</p>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="email" placeholder="clientname@companymail.com" name="email">
+                  </div>
+                  <p class="help">Eg: johndoe@dot.com</p>
                 </div>
               </div>
-            </section>
+            </div>
 
+            <hr>
+
+            <div class="field">
+              <label class="label">Project ID</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Eg: P001" name="projid">
+              </div>
+              <p class="help">
+                This field is required
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label">Project Estimation</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Project Manager" name="projmanager">
+              </div>
+              <p class="help">
+                This field is required
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label">Department</label>
+              <div class="control">
+                <div class="select">
+                  <select name="dept">
+                    <option value=""></option>
+                    <option value="Designer">Designer</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Marketing">Marketing</option>
+                  </select>
+                </div>
+              </div>
+              <p class="help">
+                This field is required
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label">Incoming Budget (INR)</label>
+              <div class="control">
+                <input class="input" type="number" placeholder="100000" name="budgt">
+              </div>
+              <p class="help">
+                This field is required
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label">Deadline</label>
+              <div class="control">
+                <input type="date" class="input" name="deadline"></input>
+              </div>
+              <p class=" help">
+                This field is required
+              </p>
+            </div>
+
+            <hr>
+
+            <div class="field">
+              <label class="label">Milestones & Notes</label>
+              <div class="control">
+                <textarea class="textarea" name="textarea"></textarea>
+              </div>
+              <p class="help">
+                This field is required
+              </p>
+            </div>
+
+            <hr>
+
+            <div class="field grouped">
+              <div class="control">
+                <button type="submit" class="button green">
+                  Submit
+                </button>
+              </div>
+              <div class="control">
+                <button type="reset" class="button red">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+    </section>
+    </form>
+
+  </div>
 </body>
 
 </html>

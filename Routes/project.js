@@ -3,6 +3,7 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 const project = require('../Database/model_project');
 
+
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 router.get('/newProject',(req,res)=>{
@@ -28,6 +29,29 @@ router.post('/newProject', urlencodedParser, (req, res) => {
 })
 router.get('/updateProject', (req, res) => {
     res.render('update_project')
+})
+router.post('/updateProject',urlencodedParser, (req, res) => {
+
+    const { projectname, clientmanager, companyname, email, projid, projmanager, dept, budgt, deadline } = req.body
+
+    let update_project = {
+        projname : projectname,
+        clientmgr : clientmanager ,
+        clientcompanynm : companyname,
+        email : email,
+        projectid: projid,
+        projectmgr: projmanager,
+        department: dept,
+        budget: budgt,
+        DOB:deadline
+    }
+
+    project.findOneAndUpdate({projectid:projid},update_project,(err,result)=>{
+        if(err) throw err
+        res.render('view_project')
+
+    })
+    // res.render('update_project')
 })
 router.get('/viewProject', (req, res) => {
     res.render('view_project')

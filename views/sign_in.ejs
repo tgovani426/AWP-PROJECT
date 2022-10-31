@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MiniSAP | Sign In</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css"
+        integrity="sha512-RntatPOhEcQEA81gC/esYoCkGkL7AYV7TeTPoU+R9zE44/yWxVvLIBfBSaMu78rhoDd73ZeRHXRJN5+aPEK53Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Any of your own CSS would go here -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/auth.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="bg-gray-800 border-gray-200 px-4 lg:px-6 py-2.5">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="/" class="flex items-center">
+                    <span class="icon"><i class="text-white text-3xl mr-5 fa-solid fa-gem"></i></span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">MiniSAP</span>
+                </a>
+                <!-- Alert BOX -->
+                <div class=" alert  alert-danger" role="alert" id="loginAlert"
+                    style="width: fit-content; margin-right: 20%;">
+                    <p style="text-align: center; ">Incorrect Credential</p>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <section class="flex flex-col justify-center items-center md:items-start md:flex-row mt-12">
+        <div class="flex-1 text-center md:text-right pt-2 md:pt-24">
+            <img src="/img/hero-image.png" width="90%" class="max-w-lg mx-auto" alt="" />
+        </div>
+        <div class="flex-1" id="signup-form-container">
+            <form id="signup-form" name="signup-form" action="/auth/signin" method="post"
+                class="bg-white px-8 pt-6 pb-8 mb-4 w-full sm:w-3/4 mx-auto md:ml-24">
+                <h3 class="mb-4 font-normal text-3xl">Welcome Back,</h3>
+                <p class="mb-4 leading-normal w-full md:w-3/4">
+                    Your organisation awaits on the other side!
+                </p>
+                <div id="input-fields">
+                    <div class="relative border-2 rounded my-6 appearance-none label-floating">
+                        <input class="w-full py-2 px-3 leading-normal rounded" id="name" name="name" type="text"
+                            placeholder="User Name" />
+                        <label class=" absolute block text-grey top-0 left-0 w-full px-3 py-2 leading-normal"
+                            for="name">
+                            User Name
+                        </label>
+                    </div>
+                    <div class="relative border-2 rounded mb-6 appearance-none label-floating ">
+                        <input class="w-full py-2 px-3 leading-normal rounded" id="email" name="email" type="email"
+                            placeholder="Email Address" />
+                        <label class="absolute block text-grey top-0 left-0 w-full px-3 py-2 leading-normal"
+                            for="email">
+                            Email Address
+                        </label>
+                    </div>
+                    <div class=" relative border-2 rounded mb-6 appearance-none label-floating">
+                        <input class="w-full py-2 px-3 leading-normal rounded" id="password" name="pass" type="password"
+                            placeholder="Password" />
+                        <label class=" absolute block text-grey top-0 left-0 px-3 py-2 leading-normal" for="password">
+                            Password
+                        </label>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <button id="signup-form__submit"
+                            class=" cta-button bg-blue hover:bg-blue-dark text-white font-bold py-4 px-16 my-4 rounded-lg focus:outline-none focus:shadow-outline shadow-lg"
+                            type="submit"">
+                            Sign In
+                        </button>
+                        <p class=" text-sm">
+                            Don't have an account yet?
+                            <a href="signup" class="font-bold text-blue hover:text-blue-darker">Sign Up </a>
+                            </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script>
+        $('#loginAlert').hide();
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('error');
+        if (myParam == "Incorrect_Credential") {
+            $('#loginAlert').show();
+            setTimeout(function () {
+                $('#loginAlert').fadeOut();
+            }, 3000)
+        }
+
+
+    </script>
+</body>
+
+</html>

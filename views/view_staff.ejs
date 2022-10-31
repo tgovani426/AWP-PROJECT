@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiniSAP | View Employee</title>
+  <!-- Tailwind is included -->
+  <link rel="stylesheet" href="css/admin.css?v=1652870200386">
+  <!-- Font Awesome -->
+  <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="app">
+    <aside class="aside is-placed-left is-expanded">
+      <div class="aside-tools">
+        <div>
+          <span class="icon"><i class="fa-solid fa-gem"></i></span>
+          <b class="font-black">MiniSAP</b>
+        </div>
+      </div>
+      <div class="menu is-menu-main">
+        <p class="menu-label">General</p>
+        <ul class="menu-list">
+          <li class="active">
+            <a href="dashboard">
+              <span class="icon"><i class="fa-solid fa-gauge"></i></span>
+              <span class="menu-item-label">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+        <p class="menu-label">PROJECT MANAGEMENT</p>
+        <ul class="menu-list">
+          <li class="--set-active-tables-html">
+            <a href="newproject">
+              <span class="icon"><i class="fa-solid fa-plus"></i></span>
+              <span class="menu-item-label">New Project</span>
+            </a>
+          </li>
+          <li class="--set-active-profile-html">
+            <a href="updateproject">
+              <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span class="menu-item-label">Update Project</span>
+            </a>
+          </li>
+          <li class="--set-active-forms-html">
+            <a href="viewproject">
+              <span class="icon"><i class="fa-solid fa-list-check"></i></span>
+              <span class="menu-item-label">View Projects</span>
+            </a>
+          </li>
+        </ul>
+        <p class="menu-label">STAFF MANAGEMENT</p>
+        <ul class="menu-list">
+          <li class="--set-active-tables-html">
+            <a href="addstaff">
+              <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
+              <span class="menu-item-label">Add Staff</span>
+            </a>
+          </li>
+          <li class="--set-active-profile-html">
+            <a href="delstaff">
+              <span class="icon"><i class="fa-solid fa-user-xmark"></i></span>
+              <span class="menu-item-label">Remove Staff</span>
+            </a>
+          </li>
+          <li class="--set-active-profile-html">
+            <a href="updatestaff">
+              <span class="icon"><i class="fa-solid fa-user-pen"></i></span>
+              <span class="menu-item-label">Update Staff</span>
+            </a>
+          </li>
+          <li class="--set-active-forms-html">
+            <a href="viewstaff">
+              <span class="icon"><i class="fa-solid fa-users"></i></span>
+              <span class="menu-item-label">View Staff</span>
+            </a>
+          </li>
+        </ul>
+        <p class="menu-label">Actions</p>
+        <ul class="menu-list">
+          <li class="active">
+            <a href="signin">
+              <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+              <span class="menu-item-label">Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="is-title-bar">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        <ul>
+          <li>Staff</li>
+          <li>View Employees</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section main-section">
+      <div class="card has-table">
+        <div class="card-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Date of Joining</th>
+                <th>Salary</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="EmpID">12345</td>
+                <td data-label="EmpName">Rebecca Bauch</td>
+                <td data-label="EmpDept">Daugherty-Daniel</td>
+                <td data-label="EmpDoJ">
+                  <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                </td>
+                <td data-label="EmpSal">$1,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</td>
+
+</html>

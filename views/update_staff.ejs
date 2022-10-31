@@ -26,7 +26,7 @@
         <p class="menu-label">General</p>
         <ul class="menu-list">
           <li class="active">
-            <a href="dashboard">
+            <a href="/emp/admin">
               <span class="icon"><i class="fa-solid fa-gauge"></i></span>
               <span class="menu-item-label">Dashboard</span>
             </a>
@@ -35,19 +35,19 @@
         <p class="menu-label">PROJECT MANAGEMENT</p>
         <ul class="menu-list">
           <li class="--set-active-tables-html">
-            <a href="newproject">
+            <a href="/project/newproject">
               <span class="icon"><i class="fa-solid fa-plus"></i></span>
               <span class="menu-item-label">New Project</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="updateproject">
+            <a href="/project/updateproject">
               <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
               <span class="menu-item-label">Update Project</span>
             </a>
           </li>
           <li class="--set-active-forms-html">
-            <a href="viewproject">
+            <a href="/project/viewproject">
               <span class="icon"><i class="fa-solid fa-list-check"></i></span>
               <span class="menu-item-label">View Projects</span>
             </a>
@@ -56,25 +56,25 @@
         <p class="menu-label">STAFF MANAGEMENT</p>
         <ul class="menu-list">
           <li class="--set-active-tables-html">
-            <a href="addstaff">
+            <a href="/staff/addStaff">
               <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
               <span class="menu-item-label">Add Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="delstaff">
+            <a href="/staff/delStaff">
               <span class="icon"><i class="fa-solid fa-user-xmark"></i></span>
               <span class="menu-item-label">Remove Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="updatestaff">
+            <a href="/staff/updateStaff">
               <span class="icon"><i class="fa-solid fa-user-pen"></i></span>
               <span class="menu-item-label">Update Staff</span>
             </a>
           </li>
           <li class="--set-active-forms-html">
-            <a href="viewstaff">
+            <a href="/staff/viewStaff">
               <span class="icon"><i class="fa-solid fa-users"></i></span>
               <span class="menu-item-label">View Staff</span>
             </a>
@@ -83,7 +83,7 @@
         <p class="menu-label">Actions</p>
         <ul class="menu-list">
           <li class="active">
-            <a href="signin">
+            <a href="/auth/signin">
               <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
               <span class="menu-item-label">Log Out</span>
             </a>
@@ -104,13 +104,13 @@
     <section class="section main-section">
       <div class="card mb-6">
         <div class="card-content">
-          <form method="get">
+          <form action="/staff/updateStaff" method="POST">
             <div class="field">
               <label class="label">Employee Details</label>
               <div class="field">
                 <label class="label">Employee ID</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Eg: EMP001">
+                  <input class="input" type="text" placeholder="Eg: EMP001" name="emp_number">
                 </div>
                 <p class="help">
                   This field is required
@@ -123,7 +123,7 @@
                   <label class="label">Employee Number</label>
                   <div class="field addons">
                     <div class="control expanded">
-                      <input class="input" type="tel" placeholder="10 Digit Mobile Number">
+                      <input class="input" type="tel" placeholder="10 Digit Mobile Number" name="phn_num">
                     </div>
                   </div>
                   <p class="help">Do not enter the first zero</p>
@@ -137,7 +137,7 @@
               <label class="label">Department</label>
               <div class="control">
                 <div class="select">
-                  <select>
+                  <select name="department">
                     <option value=""></option>
                     <option value="Designer">Designer</option>
                     <option value="Developer">Developer</option>
@@ -153,7 +153,7 @@
             <div class="field">
               <label class="label">Salary p.a. (INR)</label>
               <div class="control">
-                <input class="input" type="number" placeholder="100000">
+                <input class="input" type="number" placeholder="100000" name="salary">
               </div>
               <p class="help">
                 This field is required

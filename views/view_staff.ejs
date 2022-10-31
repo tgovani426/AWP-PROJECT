@@ -26,7 +26,7 @@
         <p class="menu-label">General</p>
         <ul class="menu-list">
           <li class="active">
-            <a href="dashboard">
+            <a href="/emp/admin">
               <span class="icon"><i class="fa-solid fa-gauge"></i></span>
               <span class="menu-item-label">Dashboard</span>
             </a>
@@ -35,19 +35,19 @@
         <p class="menu-label">PROJECT MANAGEMENT</p>
         <ul class="menu-list">
           <li class="--set-active-tables-html">
-            <a href="newproject">
+            <a href="/project/newproject">
               <span class="icon"><i class="fa-solid fa-plus"></i></span>
               <span class="menu-item-label">New Project</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="updateproject">
+            <a href="/project/updateproject">
               <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
               <span class="menu-item-label">Update Project</span>
             </a>
           </li>
           <li class="--set-active-forms-html">
-            <a href="viewproject">
+            <a href="/project/viewproject">
               <span class="icon"><i class="fa-solid fa-list-check"></i></span>
               <span class="menu-item-label">View Projects</span>
             </a>
@@ -56,25 +56,25 @@
         <p class="menu-label">STAFF MANAGEMENT</p>
         <ul class="menu-list">
           <li class="--set-active-tables-html">
-            <a href="addstaff">
+            <a href="/staff/addStaff">
               <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
               <span class="menu-item-label">Add Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="delstaff">
+            <a href="/staff/delStaff">
               <span class="icon"><i class="fa-solid fa-user-xmark"></i></span>
               <span class="menu-item-label">Remove Staff</span>
             </a>
           </li>
           <li class="--set-active-profile-html">
-            <a href="updatestaff">
+            <a href="/staff/updateStaff">
               <span class="icon"><i class="fa-solid fa-user-pen"></i></span>
               <span class="menu-item-label">Update Staff</span>
             </a>
           </li>
           <li class="--set-active-forms-html">
-            <a href="viewstaff">
+            <a href="/staff/viewStaff">
               <span class="icon"><i class="fa-solid fa-users"></i></span>
               <span class="menu-item-label">View Staff</span>
             </a>
@@ -83,7 +83,7 @@
         <p class="menu-label">Actions</p>
         <ul class="menu-list">
           <li class="active">
-            <a href="signin">
+            <a href="/auth/signin">
               <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
               <span class="menu-item-label">Log Out</span>
             </a>
@@ -107,24 +107,29 @@
           <table>
             <thead>
               <tr>
-                <th>Employee ID</th>
-                <th>Name</th>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Employee number</th>
                 <th>Department</th>
-                <th>Date of Joining</th>
                 <th>Salary</th>
-                <th></th>
+                <th>Date of Joining</th>
               </tr>
             </thead>
             <tbody>
+              <% staffsList.forEach(staff => {%>
               <tr>
-                <td data-label="EmpID">12345</td>
-                <td data-label="EmpName">Rebecca Bauch</td>
-                <td data-label="EmpDept">Daugherty-Daniel</td>
+                <td data-label="Emp_name"><%= staff.employee_name %></td>
+                <td data-label="EmpName"><%= staff.email %></td>
+                <td data-label="EmpDept"><%= staff.phone_no %></td>
+                <td data-label="EmpDept"><%= staff.employee_number %></td>
+                <td data-label="EmpDept"><%= staff.department %></td>
+                <td data-label="EmpDept"><%= staff.emp_salary %></td>
                 <td data-label="EmpDoJ">
-                  <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                  <small class="text-gray-500" title="Oct 25, 2021"><%= staff.DOB %></small>
                 </td>
-                <td data-label="EmpSal">$1,000,000</td>
               </tr>
+              <%})%>
             </tbody>
           </table>
         </div>

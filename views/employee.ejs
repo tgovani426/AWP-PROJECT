@@ -26,7 +26,7 @@
                 <p class="menu-label">General</p>
                 <ul class="menu-list">
                     <li class="active">
-                        <a href="dashboard">
+                        <a href="/emp/dashboard">
                             <span class="icon"><i class="fa-solid fa-gauge"></i></span>
                             <span class="menu-item-label">Dashboard</span>
                         </a>
@@ -54,7 +54,7 @@
         </section>
 
         <section class="section main-section">
-            <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+            <div class="grid gap-6 grid-cols-2 md:grid-cols-2 mb-6">
                 <div class="card">
                     <div class="card-content">
                         <div class="flex items-center justify-between">
@@ -63,7 +63,12 @@
                                     Ongoing Projects
                                 </h3>
                                 <h1>
-                                    1
+                                    <% var totalemp = 0; %>
+                                    <% projectsList.forEach(project => {%>
+                                        <% totalemp = totalemp + parseInt(1) %>
+                                        
+                                    <%})%>
+                                    <%= totalemp %>
                                 </h1>
                             </div>
                             <span class="icon widget-icon text-green-500"><i
@@ -79,7 +84,12 @@
                                     Employees
                                 </h3>
                                 <h1>
-                                    3
+                                    <% var totalemp = 0; %>
+                                    <% staffsList.forEach(staff => {%>
+                                        <% totalemp = totalemp + parseInt(1) %>
+                                        
+                                    <%})%>
+                                    <%= totalemp %>
                                 </h1>
                             </div>
                             <span class="icon widget-icon text-blue-500"><i
@@ -87,6 +97,14 @@
                         </div>
                     </div>
                 </div>
+                <section class="is-title-bar">
+                    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+                        <ul>
+                            
+                            <li>Money Flow</li>
+                        </ul>
+                    </div>
+                </section>
 
                 <div class="card">
                     <div class="card-content">
@@ -96,12 +114,20 @@
                                     Projects Earning
                                 </h3>
                                 <h1>
-                                    $1000
+                                    <% var totalCost = 0; %>
+                                    <% projectsList.forEach(project => {%>
+                                        <% totalCost = totalCost + parseInt(project.budget) %>
+                                        
+                                    <%})%>
+                                    Rs
+                                    <%= totalCost %>
                                 </h1>
                             </div>
                             <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>
                         </div>
                     </div>
+                </div>
+                
                 </div>
             </div>
         </section>

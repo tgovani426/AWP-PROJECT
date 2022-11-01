@@ -22,13 +22,32 @@ router.get('/admin', (req, res) => {
 })
 
 router.get('/viewproject', (rer, res) => {
-    res.render('emp_view_project')
+    project.find({}, (err, projects) =>{
+        // res.render('admin', {
+        //     projectsList: projects
+        // })
+        staff.find({}, (err, staffs) =>{
+            res.render('emp_view_project', {
+                staffsList: staffs, projectsList: projects
+            })
+        })
+    })
+
 })
 
 
 
 router.get(`/${process.env.code}/dashboard`, (req, res) => {
-    res.render('employee')
+    
+    project.find({}, (err, projects) =>{
+    
+        staff.find({}, (err, staffs) =>{
+            res.render('employee', {
+                staffsList: staffs, projectsList: projects
+            })
+        })
+    })
+
 })
 
 

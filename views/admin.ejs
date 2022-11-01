@@ -102,7 +102,7 @@
         </section>
 
         <section class="section main-section">
-            <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+            <div class="grid gap-6 grid-cols-2 md:grid-cols-2 mb-6">
                 <div class="card">
                     <div class="card-content">
                         <div class="flex items-center justify-between">
@@ -145,6 +145,14 @@
                         </div>
                     </div>
                 </div>
+                <section class="is-title-bar">
+                    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+                        <ul>
+                            
+                            <li>Money Flow</li>
+                        </ul>
+                    </div>
+                </section>
 
                 <div class="card">
                     <div class="card-content">
@@ -157,6 +165,27 @@
                                     <% var totalCost = 0; %>
                                     <% projectsList.forEach(project => {%>
                                         <% totalCost = totalCost + parseInt(project.budget) %>
+                                        
+                                    <%})%>
+                                    Rs
+                                    <%= totalCost %>
+                                </h1>
+                            </div>
+                            <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="flex items-center justify-between">
+                            <div class="widget-label">
+                                <h3>
+                                    Total Employee Salary
+                                </h3>
+                                <h1>
+                                    <% var totalCost = 0; %>
+                                    <% staffsList.forEach(staff => {%>
+                                        <% totalCost = totalCost + parseInt(staff.emp_salary) %>
                                         
                                     <%})%>
                                     Rs

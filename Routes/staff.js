@@ -59,13 +59,14 @@ router.post('/delStaff' ,urlencodedParser, (req, res) =>{
         phone_no: phn_num,
     }
 
-    staff.findOneAndUpdate({employee_number: emp_number, phone_no: phn_num},delete_staff,(err,result)=>{
-        if(err) throw err
+    staff.findOneAndUpdate({employee_number: emp_number},delete_staff,(err)=>{
+        if(err) {
+            console.log(err)
+        }
         else{
-            console.log("deleted: ", result);
+            console.log("one user deleted successfully");
         }
         res.render('delete_staff')
-
     })
 })
 

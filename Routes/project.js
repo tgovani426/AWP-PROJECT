@@ -25,7 +25,7 @@ router.post('/newProject', urlencodedParser, (req, res) => {
     })
     new_project.save().then(console.log('1 record inserted'))
 
-    res.render('new_project')
+    res.redirect('/project/viewproject')
 })
 router.get('/updateProject', (req, res) => {
     res.render('update_project')
@@ -48,7 +48,7 @@ router.post('/updateProject', urlencodedParser, (req, res) => {
 
     project.findOneAndUpdate({ projectid: projid }, update_project, (err, result) => {
         if (err) throw err
-        res.render('view_project')
+        res.redirect('/project/viewproject')
 
     })
     // res.render('update_project')

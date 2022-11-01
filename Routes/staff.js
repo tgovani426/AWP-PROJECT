@@ -22,7 +22,7 @@ router.post('/addStaff', urlencodedParser, (req, res) => {
         DOB:DOjoining
     })
     new_staff.save().then(console.log('new staff entered'))
-    res.render('add_staff')
+    res.redirect('/staff/viewStaff')
 })
 // update is still left 
 router.get('/updateStaff', (req, res) => {
@@ -42,7 +42,7 @@ router.post('/updateStaff' ,urlencodedParser, (req, res) =>{
 
     staff.findOneAndUpdate({employee_number: emp_number},update_staff,(err,result)=>{
         if(err) throw err
-        res.render('update_staff')
+        res.redirect('/staff/viewStaff')
 
     })
 })
@@ -66,7 +66,7 @@ router.post('/delStaff' ,urlencodedParser, (req, res) =>{
         else{
             console.log("one user deleted successfully");
         }
-        res.render('delete_staff')
+        res.redirect('/staff/viewStaff')
     })
 })
 
